@@ -9,13 +9,23 @@ margin: 4px 0;
 .main-body {
 background-color: #F28487;
 color: white;
-height: calc(100vh - 64px);
+height: 100%;
 }
 .materialboxed-image {
 margin: 0 auto;
 height: 400px;
 }
 .click-me-button {
-background-color: #00ffd9;
+background-color: #EE6E73;
 margin-top: 50px;
+}
+
+.card-image img {
+  object-fit: contain;
+  max-height: 250px;
+  width: 100%;
+}
+
+.card-text {
+    color:black;
 }
