@@ -1,3 +1,4 @@
+/*
 var express = require("express")
 var app = express()
 var port = process.env.port || 3004
@@ -34,4 +35,31 @@ app.get('/api/projects', async (req, res) => {
 // 4. Start server
 app.listen(port, () => {
     console.log(`App listening on port ${port}`);
+});
+
+*/
+
+//prac5: adding projects
+const express = require('express');
+const app = express();
+const PORT = 3000;
+
+// Import route file
+let projectsRoute = require('./routes/projects')
+const helloRoute = require('./routes/hello');
+
+
+// Mount the route at /api/hello
+app.use('/api/projects',projectsRoute)
+app.use('/api/hello', helloRoute);
+app.use('/api/food', require('./routes/food'));
+
+// Root route
+app.get('/', (req, res) => {
+res.send('Welcome to the Home Page!');
+});
+
+app.listen(PORT, () => {
+console.log(`Server is running at
+http://localhost:${PORT}`);
 });
